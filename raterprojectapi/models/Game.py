@@ -1,8 +1,8 @@
 """Game Model module"""
 from django.db import models
-
+from django.contrib.auth.models import User
 class Game(models.Model):
     """Game database model"""
-    created_by = models.ForeignKey("User",  on_delete=models.CASCADE, related_name="registrations")
+    user = models.ForeignKey(User,  on_delete=models.CASCADE)
     release_year = models.IntegerField
-    game_title = models.CharField(max_length=50)
+    game_title = models.CharField(max_length=75)
