@@ -1,0 +1,42 @@
+[
+    {
+        "model": "raterprojectapi.gamerating",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "game": 1,
+            "user_rating": 4,
+            "game_review": "fun game to play in a large group, great music!"
+        }
+    },
+    {
+        "model": "raterprojectapi.gamerating",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "game": 2,
+            "user_rating": 2,
+            "game_review": "BORING! Took forever to get going and who is HAL?"
+        }
+    },
+    {
+        "model": "raterprojectapi.gamerating",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "game": 3,
+            "user_rating": 5,
+            "game_review": "best game of all time!"
+        }
+    },
+    {
+        "model": "raterprojectapi.gamerating",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "game": 4,
+            "user_rating": 3,
+            "game_review": "fun only if you win!"
+        }
+    }
+]

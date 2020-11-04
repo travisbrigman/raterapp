@@ -1,0 +1,47 @@
+[
+    {
+        "model": "raterprojectapi.game",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "release_year": 1999,
+            "game_title" : "Prince's New Revolution Dance Party"
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "release_year": 2001,
+            "game_title" : "A Space Odyssey: The Game"
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "release_year": 1995,
+            "game_title" : "Super Mario Kart"
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "release_year": 1936,
+            "game_title" : "Monopoly"
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 5,
+        "fields": {
+            "user": 1,
+            "release_year": 1965,
+            "game_title" : "Candyland"
+        }
+    }
+]
