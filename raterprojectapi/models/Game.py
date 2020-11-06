@@ -10,3 +10,11 @@ class Game(models.Model):
     number_of_players = models.IntegerField()
     time_to_play = models.IntegerField()
     age_recommendation = models.CharField(max_length=5)
+
+    @property 
+    def categories (self):
+        return self.__categories
+
+    @categories.setter
+    def categories (self, value):
+        self.__categories = value

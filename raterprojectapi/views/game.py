@@ -1,4 +1,6 @@
 """View module for handling requests about games"""
+from raterprojectapi.models.category import Category
+from raterprojectapi.models import category
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from rest_framework import status
@@ -7,7 +9,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from raterprojectapi.models import Game
+from raterprojectapi.models import Game, GameCategory
 
 
 class Games(ViewSet):
@@ -34,7 +36,7 @@ class Games(ViewSet):
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
         # `gameTypeId` in the body of the request.
-        
+
         # gametype = GameType.objects.get(pk=request.data["gameTypeId"])
         # game.gametype = gametype
 
@@ -52,8 +54,6 @@ class Games(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
-
-
     def retrieve(self, request, pk=None):
         """Handle GET requests for single game
 
@@ -66,7 +66,11 @@ class Games(ViewSet):
             #   http://localhost:8000/games/2
             #
             # The `2` at the end of the route becomes `pk`
+            # events = Event.objects.filter(organizer__user=request.auth.user)
             game = Game.objects.get(pk=pk)
+            categories = Category.objects.filter(game_categories__game=game)
+            game.categories = categories
+
             serializer = GameSerializer(game, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
@@ -136,17 +140,30 @@ class Games(ViewSet):
             games, many=True, context={'request': request})
         return Response(serializer.data)
 
+class CategorySerializer(serializers.ModelSerializer):
+    """JSON serializer for categories
+
+    Arguments:
+        serializer type
+    """
+    class Meta:
+        model = Category
+        fields = ('id', 'label')
+
 class GameSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for games
 
     Arguments:
         serializer type
     """
+    categories = CategorySerializer(many=True)
+
     class Meta:
         model = Game
         url = serializers.HyperlinkedIdentityField(
             view_name='game',
             lookup_field='id'
         )
-        fields = ('id', 'release_year', 'game_title', 'number_of_players', 'designer', 'time_to_play', 'age_recommendation')
+        fields = ('id', 'release_year', 'game_title', 'number_of_players',
+                  'designer', 'time_to_play', 'age_recommendation', 'categories')
         depth = 1
