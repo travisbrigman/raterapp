@@ -21,8 +21,8 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "database": "db.sqlite3",
-            "name": "raterproject"
+            "name": "raterprojectapi",
+            "database": "db.sqlite3"
         }
     ]
 }

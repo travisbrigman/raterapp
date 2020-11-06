@@ -6,3 +6,7 @@ class Game(models.Model):
     user = models.ForeignKey(User,  on_delete=models.CASCADE)
     release_year = models.IntegerField()
     game_title = models.CharField(max_length=75)
+    designer = models.CharField(max_length=75)
+    number_of_players = models.IntegerField()
+    time_to_play = models.IntegerField()
+    age_recommendation = models.CharField(max_length=5)

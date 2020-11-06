@@ -5,7 +5,11 @@
         "fields": {
             "user": 1,
             "release_year": 1999,
-            "game_title" : "Prince's New Revolution Dance Party"
+            "game_title" : "Prince's New Revolution Dance Party",
+            "designer" : "acme",
+            "number_of_players" : 2,
+            "time_to_play" : 1,
+            "age_recommendation" : "10+"
         }
     },
     {
@@ -14,7 +18,11 @@
         "fields": {
             "user": 1,
             "release_year": 2001,
-            "game_title" : "A Space Odyssey: The Game"
+            "game_title" : "A Space Odyssey: The Game",
+            "designer" : "Lucas Arts",
+            "number_of_players" : 1,
+            "time_to_play" : 10,
+            "age_recommendation" : "13+"
         }
     },
     {
@@ -23,7 +31,11 @@
         "fields": {
             "user": 1,
             "release_year": 1995,
-            "game_title" : "Super Mario Kart"
+            "game_title" : "Super Mario Kart",
+            "designer" : "Nintendo",
+            "number_of_players" : 24,
+            "time_to_play" : 1,
+            "age_recommendation" : "10+"
         }
     },
     {
@@ -32,7 +44,11 @@
         "fields": {
             "user": 1,
             "release_year": 1936,
-            "game_title" : "Monopoly"
+            "game_title" : "Monopoly",
+            "designer" : "acme",
+            "number_of_players" : 8,
+            "time_to_play" : 5,
+            "age_recommendation" : "12+"
         }
     },
     {
@@ -41,7 +57,11 @@
         "fields": {
             "user": 1,
             "release_year": 1965,
-            "game_title" : "Candyland"
+            "game_title" : "Candyland",
+            "designer" : "Hasbro",
+            "number_of_players" : 4,
+            "time_to_play" : 1,
+            "age_recommendation" : "6+"
         }
     }
 ]
